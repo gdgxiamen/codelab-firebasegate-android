@@ -2,6 +2,7 @@ package org.gdgxiamen.codelab.firebase_gate;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
@@ -43,6 +44,22 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onCancelled(FirebaseError firebaseError) {
 
+            }
+        });
+
+        mButtonIn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                peopleNumber ++;
+                mFirebaseRef.setValue(peopleNumber);
+            }
+        });
+
+        mButtonOut.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                peopleNumber --;
+                mFirebaseRef.setValue(peopleNumber);
             }
         });
     }
