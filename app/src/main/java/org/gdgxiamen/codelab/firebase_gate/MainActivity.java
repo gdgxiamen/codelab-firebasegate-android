@@ -13,6 +13,8 @@ public class MainActivity extends AppCompatActivity {
     Button mButtonIn;
     Button mButtonOut;
 
+    Firebase mFirebaseRef;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -23,5 +25,7 @@ public class MainActivity extends AppCompatActivity {
         mTextNumber = (TextView) findViewById(R.id.textNumber);
         mButtonIn = (Button) findViewById(R.id.buttonIn);
         mButtonOut = (Button) findViewById(R.id.buttonOut);
+
+        mFirebaseRef = new Firebase("https://codelab-gate.firebaseio.com/people-number");
     }
 }
